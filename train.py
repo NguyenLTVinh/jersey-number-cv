@@ -18,6 +18,7 @@ results = model.train(
     patience=50,
     device="0",
     workers=8,
+    conf=0.1
 )
 
 # Validate the model on the validation set
@@ -26,7 +27,7 @@ val_metrics = model.val(
     split="val",
     batch=16,
     imgsz=640,
-    conf=0.25,
+    conf=0.1,
     iou=0.6,
     device="0",
     name="yolov8_custom_val",
