@@ -8,7 +8,7 @@ model = YOLO("yolov8m.pt")
 
 # Train the model
 results = model.train(
-    data="data.yaml",
+    data="./data.yaml",
     epochs=100,
     imgsz=640,
     batch=32,
@@ -22,7 +22,7 @@ results = model.train(
 
 # Validate the model on the validation set
 val_metrics = model.val(
-    data="data.yaml",
+    data="./data.yaml",
     split="val",
     batch=16,
     imgsz=640,
@@ -34,7 +34,7 @@ val_metrics = model.val(
 
 # Run inference on the test set
 test_results = model.predict(
-    source="test/images",
+    source="./test/images",
     conf=0.25,
     save=True,
     save_txt=True,
@@ -46,7 +46,7 @@ test_results = model.predict(
 
 # Evaluate the model on the test set
 test_metrics = model.val(
-    data="data.yaml",
+    data="./data.yaml",
     split="test",  # Use the test set
     batch=16,
     imgsz=640,
